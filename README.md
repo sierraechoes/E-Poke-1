@@ -8,7 +8,7 @@ Not a Pokémon ROM. Not a ROM hack. Not a Nintendo-IP fangame.
 |---|---|
 | Public title | **AETHERA** |
 | Engine | Godot **4.6.3** (standard) |
-| Phase | **P01 done · P02 ready** |
+| Phase | **P02 done · P03 ready** |
 | Live schedule | [MASTER_LOG.md](MASTER_LOG.md) |
 | How to play offline | **[PLAY_OFFLINE.md](PLAY_OFFLINE.md)** |
 

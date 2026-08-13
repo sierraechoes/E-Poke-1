@@ -7,7 +7,7 @@ func test_two_plus_two() -> void:
 
 func test_version_string_present() -> void:
 	assert_true(GameVersion.VERSION.begins_with("0."), "version pin")
-	assert_eq(GameVersion.PHASE, "P01")
+	assert_eq(GameVersion.PHASE, "P02")
 	assert_eq(GameVersion.TITLE, "AETHERA")
 
 

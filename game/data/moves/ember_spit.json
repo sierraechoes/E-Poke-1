@@ -1,0 +1,12 @@
+{
+	"id": "ember_spit",
+	"display_name": "Ember Spit",
+	"type": "ember",
+	"category": "special",
+	"power": 40,
+	"accuracy": 100,
+	"pp": 25,
+	"priority": 0,
+	"tags": [],
+	"description": "A cinder coughed from a kiln-spark."
+}

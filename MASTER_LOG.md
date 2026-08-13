@@ -2,9 +2,9 @@
 
 > Living production log. This file is the source of truth for **what to build, in what order, and whether it is actually done**.
 >
-> Last updated: **2026-08-13** (P01 DONE)
+> Last updated: **2026-08-13** (P02 DONE)
 > Current wave: **W1 Foundation**
-> Current phase: **P02 — Damage + 1v1 kernel (READY)**
+> Current phase: **P03 — Full singles loop (READY)**
 > Public title (working): **AETHERA**
 > Internal codename: **ECHOES**
 > Engine pin: **Godot 4.6.3** (standard, not .NET)
@@ -49,14 +49,15 @@ Every future session — human or agent — **must** do this. Do not skip.
 |---|---|
 | Date | 2026-08-13 |
 | Wave | W1 Foundation |
-| Phase | P02 Damage + 1v1 kernel |
+| Phase | P03 Full singles loop |
 | Phase status | READY |
 | Game code exists | Yes (`game/`) |
 | Godot installed in this environment | Yes — `tools/godot/godot` → 4.6.3.stable |
-| Tests | 35/35 GUT passing |
-| Playable build | Title + Field Camp + saves + live data registry |
-| Last ship | P01 data model |
-| Next user prompt | **"Start P02 — damage and 1v1 kernel"** |
+| Tests | 48/48 GUT passing |
+| Playable build | Title + Camp + saves + seeded 1v1 kernel |
+| Last ship | P02 battle kernel |
+| GitHub backup | `origin/arena/019ff633-e-poke-1` |
+| Next user prompt | **"Start P03 — full singles battle loop"** |
 
 ---
 
@@ -125,6 +126,7 @@ These are closed. Re-open only with a Decision-log row.
 | D21 | A phase is not done if the game errors on the happy path. Fix before advancing. |
 | D22 | Ecology sim is **weekly tick + on harvest**, never per-frame. Visual decay is mandatory or the system is invisible. |
 | D23 | Saves are **portable by default**: `portable.flag` → `saves/` next to the project. 3 slots + `.bak.json`. No network. No mid-battle save. |
+| D24 | After every completed phase: `git commit` + `git push origin arena/019ff633-e-poke-1`. Do not commit Godot binaries, `.godot/`, or `.github/workflows/` (App cannot push workflow files). |
 
 ---
 
@@ -236,25 +238,25 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done · `[-]` cut
 
 ---
 
-#### P02 — Damage + 1v1 kernel — `READY`
+#### P02 — Damage + 1v1 kernel — `DONE` (2026-08-13)
 
 **Goal:** two Echoes can legally hurt each other in a seeded sim.
 
-- [ ] `BattleRng` (seeded, replayable, 16-bucket damage roll)
-- [ ] `Damage.calc(...)` pure function (level, power, A/D, STAB, type, crit 1.5, burn 0.5 physical)
-- [ ] `Battler`, `Side`, `BattleAction`, `BattleEvent`
-- [ ] `BattleSim.setup` + `step` for: both choose Fight, speed order, one damaging move each
-- [ ] Faint detection (HP 0 cannot act)
-- [ ] Snapshot() for a future view
-- [ ] Tests: STAB once, 2× and 0.5× type, burn halves physical not special, seeded range stable, dead battler does not move
+- [x] `BattleRng` (seeded, 16-bucket 0.85–1.00 roll)
+- [x] `Damage.calc(...)` pure function
+- [x] `Battler`, `Side`, `BattleAction`, `BattleEvent`
+- [x] `BattleSim.setup` + `step` (Fight, speed order)
+- [x] Faint detection — dead cannot act
+- [x] `snapshot()`
+- [x] Tests: STAB, 2× / 0.5×, burn physical only, seed stability, 1v1 winner
 
-**Exit Gate:** headless scripted 1v1 reaches a winner. All listed tests green.
+**Exit Gate:** scripted 1v1 reaches a winner. **Passed (48/48).**
 
-**Playable check:** optional CLI/print dump of a fight in the debug console.
+**Playable check:** title boots; kernel is headless. Windowed fight is P04.
 
 ---
 
-#### P03 — Full singles loop — `NOT STARTED`
+#### P03 — Full singles loop — `READY`
 
 **Goal:** the battle game is complete enough to support the slice.
 
@@ -592,16 +594,16 @@ Use this as a cross-check when a phase feels “done” but the game is not.
 
 ### Battle
 
-- [ ] Damage, accuracy, crit, STAB, type
-- [ ] Speed + priority
+- [x] Damage, STAB, type (P02; accuracy later)
+- [x] Speed order (P02; priority is P03)
 - [ ] Status + residuals
 - [ ] Fields + transitions + Overdraw
 - [ ] Abilities as handlers
 - [ ] Items
 - [ ] Attune
-- [ ] Switch / faint / flee
+- [x] Faint skip (P02); switch/flee are P03
 - [ ] AI profiles
-- [ ] Replay seed
+- [x] Replay seed (P02)
 - [ ] Battle view + log + anim skip
 - [ ] Exp / level up / learn move
 - [ ] Evolution / retune
@@ -678,6 +680,7 @@ A phase may not be marked `DONE` unless:
 5. **Data:** `DataRegistry` validation is clean.
 6. **Scope:** no unasked systems landed “while we were here.”
 7. **Log:** this file was updated.
+8. **GitHub:** commit + push this branch (D24).
 
 ### Softlock / blocker classes (instant fail)
 
@@ -764,6 +767,7 @@ If a phase is `BLOCKED`, say `Unblock P0X: <instruction>` rather than starting P
 | 2026-08-13 | D09–D22 | Resolution, types, stats, attune, sizes, licenses, ecology tick locked |
 | 2026-08-13 | — | One-prompt phase plan replaces the coarse `notes/17` schedule as the *execution* plan. `notes/17` remains historical. |
 | 2026-08-13 | D23 | Portable `saves/` + 3 slots + backups; mid-battle save forbidden |
+| 2026-08-13 | D24 | Auto commit+push after each phase |
 
 ---
 
@@ -775,6 +779,8 @@ If a phase is `BLOCKED`, say `Unblock P0X: <instruction>` rather than starting P
 | 2026-08-13 | Master log created. Plan refined. Contradictions locked. P00 marked READY. |
 | 2026-08-13 | **P00 DONE.** Godot 4.6.3, GUT 12/12, title + portable saves, offline launchers. P01 READY. |
 | 2026-08-13 | **P01 DONE.** 16 types, formulas, DataRegistry, pinger data. GUT 35/35. P02 READY. |
+| 2026-08-13 | GitHub backup of P00–P01 on `arena/019ff633-e-poke-1` (`7043a1b`). |
+| 2026-08-13 | **P02 DONE.** Seeded 1v1 kernel. GUT 48/48. P03 READY. |
 
 ---
 

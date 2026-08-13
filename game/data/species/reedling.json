@@ -1,0 +1,14 @@
+{
+	"id": "reedling",
+	"display_name": "Reedling",
+	"category": "Reed Echo",
+	"types": ["bloom"],
+	"base_stats": { "hp": 40, "atk": 40, "def": 35, "spa": 45, "spd": 38, "spe": 50 },
+	"abilities": ["static_hum"],
+	"learnset": [
+		{ "level": 1, "move": "pulse_tap" }
+	],
+	"attune_rate": 190,
+	"habitat_tags": ["reedwalk"],
+	"entry": "It rattles when the estuary is healthy. Silence makes it still."
+}

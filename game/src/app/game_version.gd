@@ -1,8 +1,8 @@
 extends Node
 ## Build identity. Autoload: GameVersion
 
-const VERSION := "0.1.0-p01"
-const PHASE := "P01"
+const VERSION := "0.2.0-p02"
+const PHASE := "P02"
 const TITLE := "AETHERA"
 const CODENAME := "ECHOES"
 const ENGINE_PIN := "4.6.3"
