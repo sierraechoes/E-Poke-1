@@ -1,0 +1,15 @@
+{
+	"id": "brackon",
+	"display_name": "Brackon",
+	"category": "Levee Echo",
+	"types": ["tide", "bloom"],
+	"base_stats": { "hp": 62, "atk": 58, "def": 55, "spa": 72, "spd": 58, "spe": 48 },
+	"abilities": ["reed_spine"],
+	"learnset": [
+		{ "level": 1, "move": "tide_slap" },
+		{ "level": 8, "move": "bloom_lash" }
+	],
+	"attune_rate": 90,
+	"habitat_tags": ["reedwalk"],
+	"entry": "Hale's favourite surveyor. It keeps the reeds honest and punishes a dry lie."
+}

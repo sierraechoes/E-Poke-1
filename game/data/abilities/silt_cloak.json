@@ -1,0 +1,6 @@
+{
+	"id": "silt_cloak",
+	"display_name": "Silt Cloak",
+	"handler": "silt_cloak",
+	"description": "While this side stands in mud, incoming damage is ×0.8."
+}

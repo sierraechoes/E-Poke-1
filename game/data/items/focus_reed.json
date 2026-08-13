@@ -1,0 +1,8 @@
+{
+	"id": "focus_reed",
+	"display_name": "Focus Reed",
+	"pocket": "medicine",
+	"kind": "x_stat",
+	"params": { "stat": "atk", "stages": 2 },
+	"description": "Chewed before a strike. Raises Attack two stages."
+}

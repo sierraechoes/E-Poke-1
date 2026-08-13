@@ -13,6 +13,8 @@ const CATEGORIES := [&"physical", &"special", &"status"]
 @export var priority: int = 0
 @export var tags: Array[StringName] = []
 @export var description: String = ""
+## {status, chance, flinch}
+@export var effect: Dictionary = {}
 
 
 func to_dict() -> Dictionary:
@@ -30,6 +32,7 @@ func to_dict() -> Dictionary:
 		"priority": priority,
 		"tags": tag_strs,
 		"description": description,
+		"effect": effect.duplicate(true),
 	}
 
 
@@ -47,4 +50,6 @@ static func from_dict(raw: Dictionary) -> MoveSpec:
 	for t in raw.get("tags", []):
 		m.tags.append(StringName(str(t)))
 	m.description = str(raw.get("description", ""))
+	var eff: Variant = raw.get("effect", {})
+	m.effect = eff.duplicate(true) if typeof(eff) == TYPE_DICTIONARY else {}
 	return m

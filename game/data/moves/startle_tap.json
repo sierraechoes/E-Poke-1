@@ -1,0 +1,13 @@
+{
+	"id": "startle_tap",
+	"display_name": "Startle Tap",
+	"type": "pulse",
+	"category": "physical",
+	"power": 20,
+	"accuracy": 100,
+	"pp": 20,
+	"priority": 0,
+	"tags": ["contact"],
+	"effect": { "flinch": 100 },
+	"description": "A sudden knock. The other Echo flinches."
+}

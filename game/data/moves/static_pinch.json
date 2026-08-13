@@ -1,0 +1,13 @@
+{
+	"id": "static_pinch",
+	"display_name": "Static Pinch",
+	"type": "volt",
+	"category": "physical",
+	"power": 20,
+	"accuracy": 100,
+	"pp": 20,
+	"priority": 0,
+	"tags": ["contact"],
+	"effect": { "status": "para", "chance": 100 },
+	"description": "A pinching spark that locks the limbs."
+}

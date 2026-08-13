@@ -6,7 +6,7 @@ config_version=5
 
 config/name="Aethera"
 config/description="An original creature RPG. Fully offline. No Nintendo IP."
-config/version="0.2.0-p02"
+config/version="0.3.0-p03"
 config/tags=PackedStringArray("rpg", "offline", "original")
 run/main_scene="res://scenes/boot/title.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")

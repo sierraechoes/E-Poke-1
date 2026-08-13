@@ -32,3 +32,12 @@ func next_bool() -> bool:
 ## 16 buckets: 0.85, 0.86, …, 1.00
 func damage_roll() -> float:
 	return float(85 + next_int(16)) / 100.0
+
+
+## percent 0–100. 0 never, 100 always, no extra roll.
+func chance_pct(percent: int) -> bool:
+	if percent <= 0:
+		return false
+	if percent >= 100:
+		return true
+	return next_int(100) < percent

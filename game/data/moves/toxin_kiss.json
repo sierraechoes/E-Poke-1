@@ -1,0 +1,13 @@
+{
+	"id": "toxin_kiss",
+	"display_name": "Toxin Kiss",
+	"type": "toxin",
+	"category": "special",
+	"power": 40,
+	"accuracy": 100,
+	"pp": 20,
+	"priority": 0,
+	"tags": [],
+	"effect": { "status": "poison", "chance": 100 },
+	"description": "A sour note that settles in the blood."
+}

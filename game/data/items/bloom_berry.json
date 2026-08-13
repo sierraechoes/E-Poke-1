@@ -1,0 +1,8 @@
+{
+	"id": "bloom_berry",
+	"display_name": "Bloom Berry",
+	"pocket": "held",
+	"kind": "berry",
+	"params": { "type": "bloom", "mult": 0.5 },
+	"description": "Eaten when a super-effective Bloom move lands, halving that hit."
+}

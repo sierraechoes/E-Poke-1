@@ -1,0 +1,12 @@
+{
+	"id": "bloom_lash",
+	"display_name": "Bloom Lash",
+	"type": "bloom",
+	"category": "physical",
+	"power": 60,
+	"accuracy": 100,
+	"pp": 20,
+	"priority": 0,
+	"tags": ["contact"],
+	"description": "A reed-whip. Swells when the estuary is wet."
+}

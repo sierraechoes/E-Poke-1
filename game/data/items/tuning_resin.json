@@ -1,0 +1,8 @@
+{
+	"id": "tuning_resin",
+	"display_name": "Tuning Resin",
+	"pocket": "tools",
+	"kind": "attune_aid",
+	"params": { "bond_item": 1.25 },
+	"description": "Sticky pitch for the fork. Improves attune chance."
+}

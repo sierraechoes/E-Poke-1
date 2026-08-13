@@ -1,0 +1,6 @@
+{
+	"id": "after_glow",
+	"display_name": "After Glow",
+	"handler": "after_glow",
+	"description": "Restores 1/16 max HP at the end of each turn."
+}

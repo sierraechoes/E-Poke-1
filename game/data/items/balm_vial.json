@@ -1,0 +1,8 @@
+{
+	"id": "balm_vial",
+	"display_name": "Balm Vial",
+	"pocket": "medicine",
+	"kind": "status_heal",
+	"params": {},
+	"description": "A cool resin. Clears a major status."
+}

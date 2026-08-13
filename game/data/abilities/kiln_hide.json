@@ -1,0 +1,6 @@
+{
+	"id": "kiln_hide",
+	"display_name": "Kiln Hide",
+	"handler": "kiln_hide",
+	"description": "Baked skin. Cannot be burned."
+}

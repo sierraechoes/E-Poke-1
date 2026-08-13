@@ -1,0 +1,14 @@
+{
+	"id": "siltick",
+	"display_name": "Siltick",
+	"category": "Mud Echo",
+	"types": ["tide", "stone"],
+	"base_stats": { "hp": 50, "atk": 40, "def": 70, "spa": 35, "spd": 50, "spe": 40 },
+	"abilities": ["silt_cloak"],
+	"learnset": [
+		{ "level": 1, "move": "tide_slap" }
+	],
+	"attune_rate": 160,
+	"habitat_tags": ["reedwalk", "mud"],
+	"entry": "It wears the estuary. Mud clings to it as if it asked."
+}

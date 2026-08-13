@@ -1,0 +1,13 @@
+{
+	"id": "lull_hum",
+	"display_name": "Lull Hum",
+	"type": "veil",
+	"category": "status",
+	"power": 0,
+	"accuracy": 100,
+	"pp": 15,
+	"priority": 0,
+	"tags": [],
+	"effect": { "status": "sleep", "chance": 100 },
+	"description": "A low tone that borrows sleep from the fog."
+}

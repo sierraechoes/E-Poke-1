@@ -17,6 +17,7 @@ var bond: int = 50
 var bond_cap: int = 100
 var current_hp: int = 1
 var status_id: StringName = &""
+var held_item_id: StringName = &""
 var origin: String = ""
 
 
@@ -67,6 +68,7 @@ func to_dict() -> Dictionary:
 		"bond_cap": bond_cap,
 		"current_hp": current_hp,
 		"status": String(status_id),
+		"held": String(held_item_id),
 		"origin": origin,
 	}
 
@@ -86,6 +88,7 @@ static func from_dict(raw: Dictionary) -> EchoInstance:
 	inst.bond_cap = int(raw.get("bond_cap", 100))
 	inst.current_hp = int(raw.get("current_hp", 1))
 	inst.status_id = StringName(str(raw.get("status", "")))
+	inst.held_item_id = StringName(str(raw.get("held", "")))
 	inst.origin = str(raw.get("origin", ""))
 	return inst
 

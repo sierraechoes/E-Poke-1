@@ -1,0 +1,12 @@
+{
+	"id": "quick_pip",
+	"display_name": "Quick Pip",
+	"type": "pulse",
+	"category": "physical",
+	"power": 40,
+	"accuracy": 100,
+	"pp": 30,
+	"priority": 1,
+	"tags": ["contact"],
+	"description": "A pip that lands before the bar is counted."
+}

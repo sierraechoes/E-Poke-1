@@ -1,0 +1,8 @@
+{
+	"id": "reed_tonic",
+	"display_name": "Reed Tonic",
+	"pocket": "medicine",
+	"kind": "heal",
+	"params": { "hp": 20 },
+	"description": "A bitter estuary brew. Restores 20 HP."
+}

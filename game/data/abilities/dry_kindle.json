@@ -1,0 +1,6 @@
+{
+	"id": "dry_kindle",
+	"display_name": "Dry Kindle",
+	"handler": "dry_kindle",
+	"description": "Ember moves are ×1.2 on Dry Pan."
+}

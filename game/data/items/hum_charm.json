@@ -1,0 +1,8 @@
+{
+	"id": "hum_charm",
+	"display_name": "Hum Charm",
+	"pocket": "held",
+	"kind": "residual",
+	"params": { "fraction": 16 },
+	"description": "A small resonator. Restores 1/16 max HP each turn while held."
+}

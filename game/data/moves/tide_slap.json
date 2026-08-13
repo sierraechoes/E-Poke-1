@@ -1,0 +1,12 @@
+{
+	"id": "tide_slap",
+	"display_name": "Tide Slap",
+	"type": "tide",
+	"category": "physical",
+	"power": 40,
+	"accuracy": 100,
+	"pp": 25,
+	"priority": 0,
+	"tags": ["contact"],
+	"description": "A wet cuff. On Reedwalk it leaves mud."
+}

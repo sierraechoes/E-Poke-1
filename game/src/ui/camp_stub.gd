@@ -63,7 +63,7 @@ func _refresh() -> void:
 			DataRegistry.move_count(),
 			"data clean" if DataRegistry.is_clean() else "DATA ERRORS",
 		],
-		"Kernel    seeded 1v1 ready (P02)",
+		"Kernel    full singles loop ready (P03)",
 		"",
 		"Saves live on this machine, in this folder:",
 		"%s" % SaveService.get_saves_dir(),

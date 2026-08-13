@@ -70,3 +70,13 @@ func test_missing_learnset_move_is_error() -> void:
 func test_chart_available() -> void:
 	assert_not_null(DataRegistry.chart)
 	assert_eq(DataRegistry.chart.multiplier(&"ember", &"bloom"), 2.0)
+
+
+func test_p03_content_loads() -> void:
+	assert_true(DataRegistry.has_item(&"reed_tonic"))
+	assert_true(DataRegistry.has_field(&"dry_pan"))
+	assert_true(DataRegistry.has_ability(&"reed_spine"))
+	assert_true(DataRegistry.has_species(&"brackon"))
+	assert_true(DataRegistry.has_move(&"tide_slap"))
+	assert_gte(DataRegistry.ability_count(), 8)
+	assert_gte(DataRegistry.item_count(), 6)

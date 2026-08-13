@@ -1,0 +1,13 @@
+{
+	"id": "dry_pan",
+	"display_name": "Dry Pan",
+	"almanac": "The reed bed baked to cracked silt. Ember thrives. Tide and Bloom suffer. A heavy Tide can flood it back.",
+	"type_mods": {
+		"ember": 1.3,
+		"tide": 0.7,
+		"bloom": 0.85
+	},
+	"transitions": [
+		{ "tag": "tide_damage", "to": "reedwalk", "chance": 30 }
+	]
+}

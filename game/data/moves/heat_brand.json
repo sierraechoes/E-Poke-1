@@ -1,0 +1,13 @@
+{
+	"id": "heat_brand",
+	"display_name": "Heat Brand",
+	"type": "ember",
+	"category": "special",
+	"power": 40,
+	"accuracy": 100,
+	"pp": 20,
+	"priority": 0,
+	"tags": [],
+	"effect": { "status": "burn", "chance": 100 },
+	"description": "A kiln-mark that leaves a burn."
+}

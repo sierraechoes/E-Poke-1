@@ -61,12 +61,44 @@ func get_move(id: StringName) -> MoveSpec:
 	return moves.get(id)
 
 
+func has_item(id: StringName) -> bool:
+	return items.has(id)
+
+
+func get_item(id: StringName) -> ItemSpec:
+	return items.get(id)
+
+
+func has_field(id: StringName) -> bool:
+	return fields.has(id)
+
+
+func get_field(id: StringName) -> FieldSpec:
+	return fields.get(id)
+
+
+func has_ability(id: StringName) -> bool:
+	return abilities.has(id)
+
+
+func get_ability(id: StringName) -> AbilitySpec:
+	return abilities.get(id)
+
+
 func species_count() -> int:
 	return species.size()
 
 
 func move_count() -> int:
 	return moves.size()
+
+
+func item_count() -> int:
+	return items.size()
+
+
+func ability_count() -> int:
+	return abilities.size()
 
 
 func validate() -> void:

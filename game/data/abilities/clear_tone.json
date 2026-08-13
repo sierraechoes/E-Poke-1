@@ -1,0 +1,6 @@
+{
+	"id": "clear_tone",
+	"display_name": "Clear Tone",
+	"handler": "clear_tone",
+	"description": "A clean carrier. Major status cannot land."
+}

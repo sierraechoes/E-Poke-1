@@ -2,9 +2,9 @@
 
 > Living production log. This file is the source of truth for **what to build, in what order, and whether it is actually done**.
 >
-> Last updated: **2026-08-13** (P02 DONE)
+> Last updated: **2026-08-13** (P03 DONE)
 > Current wave: **W1 Foundation**
-> Current phase: **P03 — Full singles loop (READY)**
+> Current phase: **P04 — Battle view (READY)**
 > Public title (working): **AETHERA**
 > Internal codename: **ECHOES**
 > Engine pin: **Godot 4.6.3** (standard, not .NET)
@@ -49,15 +49,15 @@ Every future session — human or agent — **must** do this. Do not skip.
 |---|---|
 | Date | 2026-08-13 |
 | Wave | W1 Foundation |
-| Phase | P03 Full singles loop |
+| Phase | P04 Battle view |
 | Phase status | READY |
 | Game code exists | Yes (`game/`) |
 | Godot installed in this environment | Yes — `tools/godot/godot` → 4.6.3.stable |
-| Tests | 48/48 GUT passing |
-| Playable build | Title + Camp + saves + seeded 1v1 kernel |
-| Last ship | P02 battle kernel |
+| Tests | 101/101 GUT passing |
+| Playable build | Title + Camp + saves + full singles kernel (headless) |
+| Last ship | P03 full singles loop |
 | GitHub backup | `origin/arena/019ff633-e-poke-1` |
-| Next user prompt | **"Start P03 — full singles battle loop"** |
+| Next user prompt | **"Start P04 — battle view"** |
 
 ---
 
@@ -256,29 +256,31 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done · `[-]` cut
 
 ---
 
-#### P03 — Full singles loop — `READY`
+#### P03 — Full singles loop — `DONE` (2026-08-13)
 
 **Goal:** the battle game is complete enough to support the slice.
 
-- [ ] Commands: Fight, Switch, Item, Attune, Flee
-- [ ] Status: burn, poison, sleep, para (accuracy / full-para chance documented)
-- [ ] Volatiles: flinch (hook only if a move needs it)
-- [ ] Switching, mid-turn faint, forced replacement
-- [ ] Field: incoming modifiers + one transition (Reedwalk mud / Dry Pan — even if names are data)
-- [ ] Ability handlers: at least 8, event-subscribed, not `if ability ==`
-- [ ] Items: at least 6 (heal, status heal, X-stat, type berry, leftover-like residual, attune aid)
-- [ ] Attune formula (Approach / Offer / Harmonize / Force) + fail states
-- [ ] AI profiles: `random`, `type_aware`
-- [ ] Priority on moves
-- [ ] Tests for each status, field transition, attune-easier-if-healthy, AI picks super-effective when flagged
+- [x] Commands: Fight, Switch, Item, Attune, Flee
+- [x] Status: burn, poison, sleep, para (accuracy / full-para chance documented in `KERNEL.md`)
+- [x] Volatiles: flinch (`startle_tap` 100% hook)
+- [x] Switching, mid-turn faint, forced replacement
+- [x] Field: Reedwalk Bloom ×1.3, Tide mud, Ember bakes Dry Pan; Dry Pan Tide 30% flood-back
+- [x] Ability handlers: 8, event-subscribed via `AbilityCatalog` (sim never names them)
+- [x] Items: reed_tonic, balm_vial, focus_reed, bloom_berry, hum_charm, tuning_resin
+- [x] Attune formula (Approach / Offer / Harmonize / Force) + fail flee / agitated; Force cuts bond_cap
+- [x] AI profiles: `random`, `type_aware` (own RNG, does not touch the battle seed)
+- [x] Priority on moves
+- [x] Tests for each status, field transition, attune-easier-if-healthy, AI picks super-effective
 
-**Exit Gate:** a scripted “Inspector Hale analogue” fight is winnable and losable. Tests green.
+**Exit Gate:** scripted Hale analogue (`HaleAnalogue`) is winnable (`dry_pan` script) and losable (`stall`). **Passed (101/101).**
 
-**Playable check:** still allowed to be headless.
+**Playable check:** title `--quit-after 2` exit 0. Kernel remains headless. Windowed fight is P04.
+
+**Spec:** `game/src/battle/KERNEL.md` — turn order, accuracy, para 25%, sleep skips, attune, flee, Reedwalk.
 
 ---
 
-#### P04 — Battle view (first playable fight) — `NOT STARTED`
+#### P04 — Battle view (first playable fight) — `READY`
 
 **Goal:** a human fights with keyboard/gamepad. Placeholders OK.
 
@@ -594,16 +596,16 @@ Use this as a cross-check when a phase feels “done” but the game is not.
 
 ### Battle
 
-- [x] Damage, STAB, type (P02; accuracy later)
-- [x] Speed order (P02; priority is P03)
-- [ ] Status + residuals
-- [ ] Fields + transitions + Overdraw
-- [ ] Abilities as handlers
-- [ ] Items
-- [ ] Attune
-- [x] Faint skip (P02); switch/flee are P03
-- [ ] AI profiles
-- [x] Replay seed (P02)
+- [x] Damage, STAB, type, accuracy (P03)
+- [x] Speed order + move priority (P03)
+- [x] Status + residuals (burn / poison / sleep / para)
+- [x] Fields + Reedwalk ↔ Dry Pan (Overdraw later)
+- [x] Abilities as handlers (8)
+- [x] Items (6 battle items)
+- [x] Attune
+- [x] Faint skip, switch, flee, forced replace
+- [x] AI profiles (`random`, `type_aware`)
+- [x] Replay seed (P02; AI uses a separate RNG)
 - [ ] Battle view + log + anim skip
 - [ ] Exp / level up / learn move
 - [ ] Evolution / retune
@@ -781,6 +783,7 @@ If a phase is `BLOCKED`, say `Unblock P0X: <instruction>` rather than starting P
 | 2026-08-13 | **P01 DONE.** 16 types, formulas, DataRegistry, pinger data. GUT 35/35. P02 READY. |
 | 2026-08-13 | GitHub backup of P00–P01 on `arena/019ff633-e-poke-1` (`7043a1b`). |
 | 2026-08-13 | **P02 DONE.** Seeded 1v1 kernel. GUT 48/48. P03 READY. |
+| 2026-08-13 | **P03 DONE.** Full singles loop: commands, status, Reedwalk/Dry Pan, 8 abilities, 6 items, attune, AI. Hale analogue winnable/losable. GUT 101/101. P04 READY. |
 
 ---
 
