@@ -1,0 +1,8 @@
+{
+	"comment": "Overrides are optional. Locked defaults live in TypeChart.from_locked_table(). This file documents the chart and is merged on load.",
+	"types": [
+		"pulse", "ember", "tide", "bloom", "volt", "frost", "stone", "gale",
+		"iron", "toxin", "hex", "veil", "flesh", "myth", "gloom", "light"
+	],
+	"chart": {}
+}

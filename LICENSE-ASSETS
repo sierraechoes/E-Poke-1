@@ -1,0 +1,17 @@
+# Asset licenses (AETHERA)
+
+Code in this repository is MIT (see `LICENSE`).
+
+Until a commercial decision is made:
+
+| Kind | License |
+|---|---|
+| Narrative text, design notes (`notes/`, in-game copy) | CC-BY-SA 4.0 |
+| Original art and audio we create | CC-BY-NC 4.0 |
+| GUT (`game/addons/gut/`) | MIT — bitwes / GUT |
+| Godot Engine | MIT — Godot Engine contributors |
+
+You may not add Nintendo / The Pokémon Company / Game Freak / Creatures Inc. assets,
+names, music, sprites, tilesets, fonts, or ROM dumps to this repository.
+
+Third-party files must keep their original license notices.

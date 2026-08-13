@@ -1,0 +1,11 @@
+{
+	"id": "reedwalk",
+	"display_name": "Reedwalk",
+	"almanac": "Bloom moves swell. Tide leaves mud. Ember can bake the mud into Dry Pan.",
+	"type_mods": {
+		"bloom": 1.3
+	},
+	"transitions": [
+		{ "tag": "ember_on_mud", "to": "dry_pan" }
+	]
+}

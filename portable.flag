@@ -1,0 +1,4 @@
+portable
+# Presence of this file makes AETHERA store saves in ./saves/
+# next to the project, so a copied folder keeps your progress.
+# Delete this file to use the OS user-data directory instead.

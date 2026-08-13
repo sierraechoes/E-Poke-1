@@ -1,0 +1,56 @@
+# Godot 4
+game/.godot/
+game/*.translation
+game/export_presets.cfg
+**/*.tmp
+**/*.import
+
+# Local engine binaries (fetched per-machine; see scripts/fetch-godot.sh)
+tools/godot/Godot_*
+tools/godot/*.zip
+tools/godot/*.exe
+tools/godot/*.app
+tools/godot/godot
+!tools/godot/README.md
+!tools/godot/VERSION
+
+# Exports
+dist/
+*.pck
+*.apk
+*.ipa
+
+# Saves are portable and stay with the folder, but ignore live slot files
+saves/slot_*.json
+saves/slot_*.bak.json
+saves/*.tmp
+!saves/README.md
+!saves/.gitkeep
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+*.import.bak
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Never commit dumps or Nintendo material
+*.gba
+*.gbc
+*.gb
+*.nds
+*.3ds
+*.cia
+*.ips
+*.ups
+*.bps
+*.xdelta
+
+# GitHub App cannot push workflow files from this environment
+.github/workflows/

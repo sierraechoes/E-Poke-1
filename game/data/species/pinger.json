@@ -1,0 +1,14 @@
+{
+	"id": "pinger",
+	"display_name": "Pinger",
+	"category": "Relay Echo",
+	"types": ["pulse"],
+	"base_stats": { "hp": 48, "atk": 52, "def": 40, "spa": 35, "spd": 40, "spe": 65 },
+	"abilities": ["static_hum"],
+	"learnset": [
+		{ "level": 1, "move": "pulse_tap" }
+	],
+	"attune_rate": 200,
+	"habitat_tags": ["relay", "grass"],
+	"entry": "A small frequency that nests in unused copper. It taps the air when it is listening."
+}

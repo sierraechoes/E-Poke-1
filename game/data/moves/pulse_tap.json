@@ -1,0 +1,12 @@
+{
+	"id": "pulse_tap",
+	"display_name": "Pulse Tap",
+	"type": "pulse",
+	"category": "physical",
+	"power": 40,
+	"accuracy": 100,
+	"pp": 35,
+	"priority": 0,
+	"tags": ["contact"],
+	"description": "A short knock on the world's rhythm."
+}

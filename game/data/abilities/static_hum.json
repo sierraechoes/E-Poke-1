@@ -1,0 +1,6 @@
+{
+	"id": "static_hum",
+	"display_name": "Static Hum",
+	"handler": "static_hum",
+	"description": "A faint carrier wave. Handler lands in P03."
+}
