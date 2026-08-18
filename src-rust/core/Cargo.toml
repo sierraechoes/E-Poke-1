@@ -1,0 +1,17 @@
+[package]
+name = "aftis-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "AFTIS market-data, OMS/EMS, risk, simulator, and storage (Rust reference)"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+# The full native core depends on crates that require crates.io connectivity:
+# serde = { version = "1", features = ["derive"] }
+# tokio = { version = "1", features = ["full"] }
+# rusqlite = { version = "0.31", features = ["bundled"] }
+# duckdb = { version = "0.10", features = ["bundled"] }
+# tokio-tungstenite = "0.21"

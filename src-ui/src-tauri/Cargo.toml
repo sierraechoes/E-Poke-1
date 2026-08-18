@@ -1,0 +1,32 @@
+# Tauri v2 native shell for the AFTIS desktop terminal.
+# In the full Rust toolchain environment this crate links the WebView2 host,
+# exposes the IPC bridge to the engine, and is bundled into the .msi/.exe by the
+# Tauri bundler. The TypeScript engine (`engine/`) is the verified, executable
+# implementation; this crate hosts it as a native Windows application.
+
+[package]
+name = "aftis-desktop"
+version = "1.0.0"
+description = "Twig D. Capra - AFTIS Terminal"
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "aftis_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Reference pointers to the verified engine crates (built in the Rust core):
+# aftis-core = { path = "../../../src-rust/core" }
+# aftis-math = { path = "../../../src-rust/math" }
+# aftis-quant = { path = "../../../src-rust/quant" }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

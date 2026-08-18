@@ -1,0 +1,24 @@
+# AFTIS — Rust reference workspace (Section 2.1 architecture target).
+#
+# NOTE: the executable, verified implementation for this environment is the
+# TypeScript engine in `engine/`. This workspace is the native (Rust + Tauri)
+# reference target for full-toolchain Windows builds where crates.io is
+# reachable. The `math` crate is std-only and compiles standalone with rustc;
+# `core` and `quant` are scaffolded with their public module layout and require
+# their declared dependencies (serde, tokio, etc.) to build in a connected env.
+
+[workspace]
+resolver = "2"
+members = ["core", "math", "quant"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.77"
+license = "MIT"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"

@@ -1,0 +1,33 @@
+name: build-and-test
+
+on:
+  push:
+    branches: [main, "arena/**"]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: Math accuracy + OMS lifecycle + stress (1M ticks)
+        run: npm test
+      - name: Build frontend bundle
+        run: npm run build
+
+  rust-reference:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Check std-only math crate compiles
+        run: cargo build --release -p aftis-math
+        working-directory: src-rust

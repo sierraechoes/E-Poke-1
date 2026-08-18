@@ -1,0 +1,23 @@
+node_modules/
+dist/
+*.local
+.vite/
+.turbo/
+coverage/
+
+# Tauri / Rust build artifacts (out of Git — large)
+src-ui/src-tauri/target/
+src-ui/src-tauri/gen/
+src-rust/**/target/
+target/
+
+# Engine local persistence (WAL snapshots)
+*.snap
+*.wal
+*.tmp
+:memory:
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

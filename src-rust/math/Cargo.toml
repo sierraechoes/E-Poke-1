@@ -1,0 +1,9 @@
+[package]
+name = "aftis-math"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "AFTIS stochastic calculus & numerical PDE engines (std-only reference)"
+
+[lib]
+path = "src/lib.rs"
